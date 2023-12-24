@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import ChessPiece from './components/ChessPiece';
+import ChessBoard from './components/ChessBoard';
 
 const ChessGame = () => {
   
@@ -38,6 +39,7 @@ const ChessGame = () => {
 
  
   return (
+    
     <View>
       {board.map((row, rowIndex) => (
         <View key={rowIndex} style={{ flexDirection: 'row' }}>
