@@ -1,7 +1,7 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 
 const ChessPiece = ({ piece }) => {
-
   const pieceMapping = {
     'R': '♖',
     'N': '♘',
@@ -18,9 +18,9 @@ const ChessPiece = ({ piece }) => {
   };
 
   return (
-    <div style={{ fontSize: '20px' }}>
-      {piece && <span>{pieceMapping[piece]}</span>}
-    </div>
+    <View>
+      {piece && <Text style={{ fontSize: 20 }}>{pieceMapping[piece]}</Text>}
+    </View>
   );
 };
 
