@@ -30,8 +30,7 @@ const ChessGame = () => {
       console.log('Invalid move');
     }
   };
-
-
+  
   const isValidMove = (startRow, startCol, endRow, endCol) => {
    
     return true;
@@ -39,28 +38,28 @@ const ChessGame = () => {
 
  
   return (
-    <div>
+    <View>
       {board.map((row, rowIndex) => (
-        <div key={rowIndex} style={{ display: 'flex' }}>
+        <View key={rowIndex} style={{ flexDirection: 'row' }}>
           {row.map((piece, colIndex) => (
-            <div
+            <View
               key={colIndex}
-              onClick={() => handleMove(0, 0, rowIndex, colIndex)} // Example: Move the piece at (0, 0) to the clicked position
+              onTouchEnd={() => handleMove(0, 0, rowIndex, colIndex)}
               style={{
-                width: '40px',
-                height: '40px',
-                border: '1px solid #ccc',
-                display: 'flex',
+                width: 40,
+                height: 40,
+                borderWidth: 1,
+                borderColor: '#ccc',
                 justifyContent: 'center',
                 alignItems: 'center',
               }}
             >
               <ChessPiece piece={piece} />
-            </div>
+            </View>
           ))}
-        </div>
+        </View>
       ))}
-    </div>
+    </View>
   );
 };
 
