@@ -46,6 +46,8 @@ const ChessGame = () => {
   );
 };
 
+const renderPiece = (piece) => <ChessPiece piece={piece} />;
+
 const GameScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
