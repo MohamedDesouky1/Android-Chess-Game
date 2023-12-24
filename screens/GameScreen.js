@@ -39,28 +39,9 @@ const ChessGame = () => {
 
  
   return (
-    
-    <View>
-      {board.map((row, rowIndex) => (
-        <View key={rowIndex} style={{ flexDirection: 'row' }}>
-          {row.map((piece, colIndex) => (
-            <View
-              key={colIndex}
-              onTouchEnd={() => handleMove(0, 0, rowIndex, colIndex)}
-              style={{
-                width: 40,
-                height: 40,
-                borderWidth: 1,
-                borderColor: '#ccc',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-            >
-              <ChessPiece piece={piece} />
-            </View>
-          ))}
-        </View>
-      ))}
+    <View style={styles.container}>
+      <Text style={styles.title}>Chess Game Screen</Text>
+      <ChessBoard board={board} handleMove={handleMove} />
     </View>
   );
 };
